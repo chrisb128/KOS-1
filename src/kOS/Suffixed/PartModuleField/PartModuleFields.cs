@@ -388,6 +388,7 @@ namespace kOS.Suffixed.PartModuleField
         {
             AddSuffix("NAME", new Suffix<StringValue>(() => partModule.moduleName));
             AddSuffix("PART", new Suffix<PartValue>(() => PartValueFactory.Construct(partModule.part, shared)));
+            AddSuffix("TORQUE", new Suffix<PartModuleTorqueInfo>(() => new PartModuleTorqueInfo(partModule, shared)));
             AddSuffix("ALLFIELDS", new Suffix<ListValue>(() => AllFields("({0}) {1}, is {2}")));
             AddSuffix("ALLFIELDNAMES", new Suffix<ListValue>(AllFieldNames));
             AddSuffix("HASFIELD", new OneArgsSuffix<BooleanValue, StringValue>(HasField));
